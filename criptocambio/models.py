@@ -24,3 +24,5 @@ class CriptoModel:
             raise APIError("Ha ocurrido un error {} al consultar la API").format(codigo, respuesta.reason)
 
 
+class CriptoModelTK():
+    pass
