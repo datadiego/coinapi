@@ -1,7 +1,7 @@
 #Modelo se ocupa de manejar los datos y llamar a la API
 import requests
 
-from . import APIKEY
+from criptocambio import APIKEY
 
 class APIError(Exception):
     pass

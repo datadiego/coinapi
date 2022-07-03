@@ -1,6 +1,27 @@
-from .models import CriptoModel, CriptoModelTK
 from .views import  CriptoView, CriptoViewTK
+from .models import CriptoModel
 from tkinter import *
+
+
+'''              
+class CriptoControllerTK():
+
+    def __init__(self):
+        root = Tk()
+        self.vista = CriptoViewTK(root)
+        self.modelo = CriptoModelTK()
+'''
+class CriptoControllerTK(Tk):
+
+    def __init__(self):
+        super().__init__()
+        self.vista = CriptoViewTK(self)
+        self.modelo = CriptoModel()
+
+    def run(self):
+        self.mainloop()
+
+
 class CriptoController:
 
     def __init__(self):
@@ -18,17 +39,3 @@ class CriptoController:
             seguir = ""
             while seguir.upper() not in ("S", "N"):
                 seguir = input("¿Quieres continuar? (S/N)")
-'''              
-class CriptoControllerTK():
-
-    def __init__(self):
-        root = Tk()
-        self.vista = CriptoViewTK(root)
-        self.modelo = CriptoModelTK()
-'''
-class CriptoControllerTK(Tk):
-
-    def __init__(self):
-        super().__init__()
-        self.vista = CriptoViewTK(self)
-        self.modelo = CriptoModelTK()
