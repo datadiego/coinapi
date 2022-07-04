@@ -21,7 +21,7 @@ class CriptoModel:
         if codigo == 200:
             self.cambio = respuesta.json()["rate"]
         else:
-            raise APIError("Ha ocurrido un error {} al consultar la API").format(codigo, respuesta.reason)
+            raise APIError("Ha ocurrido un error {} al consultar la API".format(codigo, respuesta.reason))
 
 
 class CriptoModelTK():
