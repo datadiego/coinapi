@@ -15,11 +15,26 @@ class CriptoControllerTK(Tk):
 
     def __init__(self):
         super().__init__()
-        self.vista = CriptoViewTK(self)
+        self.vista = CriptoViewTK(self, self.calcular_cambio)
         self.modelo = CriptoModel()
 
     def run(self):
         self.mainloop()
+
+    def calcular_cambio(self):
+        #Recoge los datos de la vista
+        #Los pasa al modelo
+        #Pide conversion al modelo
+        #Manda el resultado a vista
+        self.modelo.moneda_origen = self.vista.moneda_origen()
+        self.modelo.moneda_destino = self.vista.moneda_destino()
+        self.modelo.consultar_cambio()
+
+        self.vista.mostrar_cambio(self.modelo.cambio)
+
+        #self.vista.etiqueta_resultado = self.modelo.cambio
+
+
 
 
 class CriptoController:
